@@ -2,12 +2,18 @@ package org.example.lesson_1
 
 fun main() {
 
-    val secondInSpase: Short = 1
+    val secondInSpase: Short = 6480
 
-    println(transSecond(secondInSpase))
+    val hour: Int = secondInSpase / 3600
+    val minute: Int = secondInSpase / 60 - hour * 60
+    val second: Int = 6480 % 60
+
+    println(String.format("%02d:%02d:%02d", hour, minute, second))
+
+    //println(transSecond(secondInSpase))
 
 }
-fun transSecond(second: Short): String {
+/*fun transSecond(second: Short): String {
 
     // С циклом for пока не дружу
 
@@ -26,4 +32,4 @@ fun transSecond(second: Short): String {
     val hour: Int = minute / 60
 
     return "${hour}:${resMinute}:${resSecond}"
-}
+}*/
