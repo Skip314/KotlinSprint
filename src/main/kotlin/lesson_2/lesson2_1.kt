@@ -7,12 +7,8 @@ fun main() {
     val ballStudent3: Byte = 3
     val ballStudent4: Byte = 5
 
-    println(averageBall(ballStudent1, ballStudent2, ballStudent3, ballStudent4))
+    val averageBal: Float = (ballStudent1 + ballStudent2 + ballStudent3 + ballStudent4) / 4f
 
-}
-fun averageBall(ball1: Byte, ball2: Byte, ball3: Byte, ball4: Byte): Float {
+    println(averageBal)
 
-    val result = (ball1 + ball2 + ball3 + ball4) / 4f
-
-    return result
 }
