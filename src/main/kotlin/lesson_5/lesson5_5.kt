@@ -36,11 +36,11 @@ fun getVinNum(minNum: Int, maxNum: Int): Int {
 
 }
 fun countNum(num: Int, list: MutableList<Int>): Int {
-    //Функция присваивает 1 если такое число есть в списке, и 0 если нет
+    //Функция возвращает 1 если такое число есть в списке, или 0, если нет
     val result: Int
     if(list.contains(num) == true) {
         result = 1
-        println("Вы угадали $num")
+        println("Вы угадали число:$num")
     }
     else result = 0
 
