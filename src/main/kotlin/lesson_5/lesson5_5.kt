@@ -28,6 +28,7 @@ fun main() {
         else -> "Вы проиграли"
     }
     println("Вы угадали $quantityPoint чисел из 3, $result")
+
 }
 fun getVinNum(minNum: Int, maxNum: Int): Int {
 
@@ -37,7 +38,10 @@ fun getVinNum(minNum: Int, maxNum: Int): Int {
 fun countNum(num: Int, list: MutableList<Int>): Int {
     //Функция присваивает 1 если такое число есть в списке, и 0 если нет
     val result: Int
-    if(list.contains(num) == true) result = 1
+    if(list.contains(num) == true) {
+        result = 1
+        println("Вы угадали $num")
+    }
     else result = 0
 
     return result
