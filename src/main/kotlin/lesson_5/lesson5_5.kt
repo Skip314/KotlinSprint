@@ -5,7 +5,7 @@ import kotlin.random.Random
 fun main() {
 
     val minNum = 0
-    val maxNum = 42
+    val maxNum = 21
 
     val vinNumList = mutableListOf<Int>(getVinNum(minNum, maxNum),
         getVinNum(minNum, maxNum), getVinNum(minNum, maxNum))
