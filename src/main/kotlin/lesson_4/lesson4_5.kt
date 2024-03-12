@@ -16,7 +16,7 @@ fun main() {
 
 
     val permission = (bortCrash.toBoolean() == false && worker.toInt() in 55 .. 70 && cargo.toInt() >= 50) ||
-            (bortCrash.toBoolean() == true && worker.toInt() == 70 && weather.toBoolean() == true && cargo.toInt() >= 50)
+            (worker.toInt() == 70 && weather.toBoolean() == true && cargo.toInt() >= 50)
 
     println("Корабль может отправляться в плавание :$permission")
 }
