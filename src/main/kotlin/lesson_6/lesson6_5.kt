@@ -36,7 +36,7 @@ fun main() {
         attempts--
         println(attempts)
 
-    } while (login != insertLogin && password != insertPassword && sum != inputSum && attempts > 0)
+    } while (login != insertLogin && password != insertPassword && sum != inputSum)
 
     println("Успешно")
 
