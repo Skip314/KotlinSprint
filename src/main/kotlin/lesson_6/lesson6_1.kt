@@ -10,14 +10,18 @@ fun main() {
 
     println("Аккаунт $insertLogin успешно создан!")
 
+    var login: String
+    var password: String
+
     do {
         println("Введите логин")
-        var login = readln()
+        login = readln()
 
         println("Введите пароль")
-        var password = readln()
+        password = readln()
 
-    } while (login == insertLogin && password == insertPassword)
+    } while (login != insertLogin && password != insertPassword)
+
     println("Успешно")
 
 }
