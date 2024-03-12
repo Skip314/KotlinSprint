@@ -10,6 +10,6 @@ fun main() {
     val rate = 0.167
     val time = 20
 
-    val result = cash * (1+rate).pow(time)
+    val result = cash * (1 + rate).pow(time)
     println(String.format("%.3f", result))
 }
