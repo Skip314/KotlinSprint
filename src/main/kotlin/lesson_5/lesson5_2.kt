@@ -3,7 +3,7 @@ package org.example.lesson_5
 fun main() {
 
     println("Введите ваш год рождения")
-    val birthYear = readLine()!!.toInt()
+    val birthYear = readln().toInt()
 
     val todayYear = 2024
 
