@@ -34,11 +34,12 @@ fun main() {
         val inputSum = readln().toInt()
 
         attempts--
-        println(attempts)
 
-    } while (login != insertLogin && password != insertPassword && sum != inputSum)
+        if (attempts == 0) println("Доступ запрещен")
+        else if (attempts == 1) println("Осталась $attempts попытка")
+        else println("Осталось $attempts попытки")
 
-    println("Успешно")
+    } while (login != insertLogin || password != insertPassword || sum != inputSum || attempts != 0)
 
 }
 
