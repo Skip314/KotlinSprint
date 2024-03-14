@@ -4,8 +4,6 @@ import kotlin.math.pow
 
 fun main() {
 
-    //Формула S = P*(1+ i)n
-
     val cash = 70000
     val rate = 16.7
     val time = 20
