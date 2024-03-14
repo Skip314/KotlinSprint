@@ -10,7 +10,8 @@ fun main() {
         getStringRandom(rangeString), getIntRandom(rangeNum),
         getStringRandom(rangeString), getIntRandom(rangeNum),
         )
-    println("${pas[0]}${pas[1]}${pas[2]}${pas[3]}${pas[4]}${pas[5]}")
+
+    for (item in pas) print(item)
 
 }
 fun getIntRandom(range: IntRange): String {
