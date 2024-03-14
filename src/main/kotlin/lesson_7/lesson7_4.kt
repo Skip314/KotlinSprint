@@ -5,11 +5,11 @@ fun main() {
     println("Введите количество секунд:")
     val sec = readln().toInt()
 
-    val range = 0..sec - 1
+    val range = sec downTo 1
 
     for (i in range) {
 
-        println("Осталось ${sec - i} секунд")
+        println("Осталось $i секунд")
         Thread.sleep(1000)
 
     }
