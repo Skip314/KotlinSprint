@@ -7,9 +7,9 @@ fun main() {
     //Формула S = P*(1+ i)n
 
     val cash = 70000
-    val rate = 0.167
+    val rate = 16.7
     val time = 20
 
-    val result = cash * (1 + rate).pow(time)
+    val result = cash * (1 + rate / 100).pow(time)
     println(String.format("%.3f", result))
 }
