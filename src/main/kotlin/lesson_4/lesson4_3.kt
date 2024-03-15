@@ -7,9 +7,11 @@ fun main() {
     val air: Int = 20
     val season: String = "winter"
 
-    println("""
+    println(
+        """
         Благоприятные ли условия сейчас для роста бобовых?
         ${weatherToday == "sun" && openTent == true && air == 20 && season != "winter"}
-        """.trimIndent())
+        """.trimIndent()
+    )
 
 }
