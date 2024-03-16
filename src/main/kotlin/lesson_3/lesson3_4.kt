@@ -13,7 +13,4 @@ fun main() {
     moveNum = moveNum + 1
     println("$figureStart-$figureFinish:$moveNum ход")
 
-
-
-
 }
