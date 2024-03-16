@@ -23,8 +23,9 @@ fun main() {
     println("Готово! Вы сохранили следующий список:")
     printArray(arrayOfIngridient)
 }
+
 fun printArray(array: Array<String>) {
 
-    for(i in array)
+    for (i in array)
         print("|$i| ")
 }
