@@ -4,7 +4,7 @@ fun main() {
 
     val arrayOfQuantityAdvertising: Array<Int> = arrayOf(0, 0, 0, 0, 0, 0, 0)
 
-    val advertisingDay1 = 12
+    val advertisingDay1 = 13
     val advertisingDay2 = 34
     val advertisingDay3 = 17
     val advertisingDay4 = 8
