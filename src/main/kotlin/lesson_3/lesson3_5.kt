@@ -4,13 +4,17 @@ fun main() {
 
     val moveInfo = "D2-D4;0"
 
-    val positionStart = moveInfo.substring(0,2)
-    println(positionStart)
+    val delim1 = "-"
+    val delim2 = ";"
 
-    val positionFinish = moveInfo.substring(3,5)
-    println(positionFinish)
+    val splitInfo = moveInfo.split(delim1, delim2)
 
-    val moveNum = moveInfo.substring(6, moveInfo.lastIndex+1)
+    val posStart = splitInfo[0]
+    val posFinish = splitInfo[1]
+    val moveNum = splitInfo[2]
+
+    println(posStart)
+    println(posFinish)
     println(moveNum)
 
 }
