@@ -4,7 +4,7 @@ fun main() {
 
     val rateNum = 1..9
     var attempts = 5
-    val vinNum = 9
+    val vinNum = rateNum.random()
     var indikator: Boolean = false
     var inputNum: Int
 
