@@ -9,7 +9,7 @@ fun main() {
     val testNum2 = 4
     val AcceptedNum = testNum1 + testNum2
 
-    println("Решите пример $testNum1 + $testNum2")
+    print("Решите пример $testNum1 + $testNum2 = ")
     val result = readLine()!!.toInt()
 
     if (AcceptedNum == result) println(textAccepted)
