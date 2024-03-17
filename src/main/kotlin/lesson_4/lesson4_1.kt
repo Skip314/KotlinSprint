@@ -8,7 +8,4 @@ fun main() {
 
     println("Доступность столиков на сегодня: ${reserveTableToday < table}")
     println("Доступность столиков на завтра: ${reserveTableTomorrow < table}")
-
-
-
 }
