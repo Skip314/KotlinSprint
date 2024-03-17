@@ -14,15 +14,17 @@ fun main() {
     print("Укажите погоду (true/false) ")
     val isWeatherGood = readln().toBoolean()
 
-    val rangeBoardWorker = 55..70
+    val rangeBoardWorker = MIN_WORKER..MAX_WORKER
 
-    val permission = (isDamaged == BOARD_DAMAGED && worker in rangeBoardWorker && cargo > MIN_BOARDS_PROVISION) ||
-            (worker == GOOD_QUANTITY_WORKER && isWeatherGood == WEATHER_GOOD && cargo > MIN_BOARDS_PROVISION)
+    val permission = (isDamaged == IS_BOARD_DAMAGED && worker in rangeBoardWorker && cargo > MIN_BOARDS_PROVISION) ||
+            (worker == GOOD_QUANTITY_WORKER && isWeatherGood == IS_WEATHER_GOOD && cargo > MIN_BOARDS_PROVISION)
 
     println("Корабль может отправляться в плавание :$permission")
 }
 
 const val MIN_BOARDS_PROVISION = 50
-const val WEATHER_GOOD = true
-const val BOARD_DAMAGED = false
+const val IS_WEATHER_GOOD = true
+const val IS_BOARD_DAMAGED = false
 const val GOOD_QUANTITY_WORKER = 70
+const val MIN_WORKER = 55
+const val MAX_WORKER = 70
