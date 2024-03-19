@@ -8,7 +8,7 @@ fun main() {
 
     val hourStart = startTime.substringBefore(':')
 
-    val minuteStart = startTime.substring(startTime.lastIndexOf(':')+1)
+    val minuteStart = startTime.substring(startTime.lastIndexOf(':') + 1)
 
     val finishTime: Int = hourStart.toInt() * minInHour + minuteStart.toInt() + travelTime
 
