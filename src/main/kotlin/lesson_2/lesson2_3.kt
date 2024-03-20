@@ -16,4 +16,5 @@ fun main() {
 
     println(String.format("%02d:%02d", finishHour, finishMinute))
 }
+
 const val MIN_IN_HOUR = 60
