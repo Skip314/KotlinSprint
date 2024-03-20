@@ -1,28 +1,49 @@
 package org.example.lesson_11
 
-//для участников надо создавать отдельный класс?
-//или достаточно листа? если да, то все данные хранить в одном элементе?
-//нужно ли имя участнику?
-//где взять аватарку и тем более, как вывести информацию при нажатии на нее в консоли?
 
 class Room(
     val cover: String,
     val name: String,
-    var listOfMember: MutableList<String?>,
+    var listOfMember: MutableList<Member>,
 ) {
     fun addMember() {
-        println("Добавить участника в комнату ")
-        print("(аватар, статус(“разговаривает”, “микрофон выключен”, “пользователь заглушен”)): ")
-        listOfMember.add(readln())
+
+        println("Добавить в комнату участника: ")
+        val inputMember = readln()
+
+        listOfMember.add(inputMember)
+
     }
 
     fun editStatus() {
+
         println()
     }
 }
 
+class Member(
+
+    val name: String,
+    val avatar: String,
+    val status: String,
+) {
+    fun printMember() {
+
+        println(name)
+        println(avatar)
+        println(status)
+    }
+
+}
+
 fun main() {
 
-    val room1 = Room("Программист","Котлин", mutableListOf(":), разговаривает"))
+    val listOfMemberInRoom1 = mutableListOf<Member>()
+    var room1 = Room("Программист", "Котлин", listOfMemberInRoom1)
+    var member1 = Member("Vlad", ":|", "разговаривает")
+    var member2 = Member("Ivan", ";)", "пользователь заглушен")
 
+    listOfMemberInRoom1.add(member1)
+    listOfMemberInRoom1.add(member2)
+    println(listOfMemberInRoom1)
 }
