@@ -3,7 +3,7 @@ package org.example.lesson_10
 fun main() {
 
     print("Желаете сыграть в кости?: ")
-    val answer = readln()
+    val answer = readln().toLowerCase()
     if (answer != "да") return
     else println("Вы выйграли ${play()} раз")
 }
@@ -35,7 +35,7 @@ fun play(): Int {
         }
         println()
         println("Хотите бросить кости еще раз? Введите Да или Нет")
-        val finishAnswer = readln()
+        val finishAnswer = readln().toLowerCase()
 
     } while (finishAnswer == "да")
 
