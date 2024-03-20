@@ -14,10 +14,8 @@ fun main() {
     print("Укажите погоду (true/false) ")
     val isWeatherGood = readln().toBoolean()
 
-    val rangeBoardWorker = MIN_WORKER..MAX_WORKER
-
-    val permission = (isDamaged == IS_BOARD_DAMAGED && worker in rangeBoardWorker && cargo > MIN_BOARDS_PROVISION) ||
-            (worker == GOOD_QUANTITY_WORKER && isWeatherGood == IS_WEATHER_GOOD && cargo > MIN_BOARDS_PROVISION)
+    val permission = (isDamaged == IS_BOARD_DAMAGED && worker in MIN_WORKER..MAX_WORKER && cargo > MIN_BOARDS_PROVISION) ||
+            (worker == GOOD_QUANTITY_WORKER && isWeatherGood == IS_WEATHER_GOOD && cargo >= MIN_BOARDS_PROVISION)
 
     println("Корабль может отправляться в плавание :$permission")
 }
