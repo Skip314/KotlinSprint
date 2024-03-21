@@ -20,7 +20,7 @@ fun main() {
         println("Введите пароль")
         password = readln()
 
-    } while (login != insertLogin && password != insertPassword)
+    } while (login != insertLogin || password != insertPassword)
 
     println("Успешно")
 
