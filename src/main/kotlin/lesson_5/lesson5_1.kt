@@ -10,7 +10,7 @@ fun main() {
     val AcceptedNum = testNum1 + testNum2
 
     print("Решите пример $testNum1 + $testNum2 = ")
-    val result = readLine()!!.toInt()
+    val result = readln().toInt()
 
     if (AcceptedNum == result) println(textAccepted)
     else println(textNotAccepted)
