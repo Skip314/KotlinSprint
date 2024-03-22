@@ -12,13 +12,13 @@ fun main() {
 
     println(
         "Груз с весом $weightCargo1 кг и объемом $volumeCargo1 л соответствует категории 'Average': ${
-            weightCargo1 in AVERAGE_MIN_WEIGHT..AVERAGE_MAX_WEIGHT && volumeCargo1 <= AVERAGE_MAX_VOLUME
+            weightCargo1 in AVERAGE_MIN_WEIGHT..AVERAGE_MAX_WEIGHT && volumeCargo1 < AVERAGE_MAX_VOLUME
         }"
     )
 
     println(
         "Груз с весом $weightCargo2 кг и объемом $volumeCargo2 л соответствует категории 'Average': ${
-            weightCargo2 in AVERAGE_MIN_WEIGHT..AVERAGE_MAX_WEIGHT && volumeCargo2 <= AVERAGE_MAX_VOLUME
+            weightCargo2 in AVERAGE_MIN_WEIGHT..AVERAGE_MAX_WEIGHT && volumeCargo2 < AVERAGE_MAX_VOLUME
         }"
     )
 
