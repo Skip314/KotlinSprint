@@ -17,11 +17,6 @@ class Forum(
         lastId++
     }
 
-    fun printUser() {
-
-        for (i in listOfUser)
-            println("${i.userName}, id: ${i.userId}")
-    }
 
     fun createNewMessage(userId: Int, message: String) {
 
@@ -57,7 +52,7 @@ fun main() {
     val forum = Forum()
 
     forum.createNewUser("Ivan")
-    forum.createNewMessage(0,"Hi")
+    forum.createNewMessage(0, "Hi")
 
     forum.createNewUser("Vlad")
     forum.createNewMessage(1, "My name is Vlad")
@@ -66,5 +61,6 @@ fun main() {
 
     forum.createNewUser("Fedor")
     forum.createNewMessage(2, "I am Fedor")
+
     forum.printThread()
 }
