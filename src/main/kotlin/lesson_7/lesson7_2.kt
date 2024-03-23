@@ -4,11 +4,11 @@ fun main() {
 
     val range = 1000..9999
 
-    do{
+    do {
 
         val code = range.random()
         println("Ваш код авторизации: $code")
-        print("Введите код:")
+        print("Введите код: ")
         val inputCode = readln().toInt()
 
     } while (code != inputCode)
