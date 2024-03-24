@@ -4,13 +4,11 @@ fun main() {
 
     println("Введите количество секунд, которое надо засечь")
 
-    val insertSecond = readln().toInt()
-    var secondTimer = insertSecond
+    val insertSecond = readln().toLong()
 
-    while (secondTimer > 0) {
-        secondTimer--
-        println("Осталось $secondTimer секунд")
-        Thread.sleep(1000)
-    }
-    println("Прошло $insertSecond секунд")
+    Thread.sleep(insertSecond * MILLIS_IN_SECOND)
+
+    println("Прошло секунд: $insertSecond ")
 }
+
+const val MILLIS_IN_SECOND = 1000
