@@ -2,11 +2,10 @@ package org.example.lesson_7
 
 fun main() {
 
-    val range = 1000..9999
+    val code = (1000..9999).random()
 
     do {
 
-        val code = range.random()
         println("Ваш код авторизации: $code")
         print("Введите код: ")
         val inputCode = readln().toInt()
