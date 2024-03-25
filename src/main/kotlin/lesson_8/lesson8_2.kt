@@ -7,9 +7,9 @@ fun main() {
     print("Введите название ингридиента для поиска: ")
     val inputNameIngridient = readln()
 
-    for(i in arrayOfIngridient) {
-        if (inputNameIngridient == i) {
-            println("Ингридиент $i в рецепте есть")
+    for(ingredient in arrayOfIngridient) {
+        if (inputNameIngridient == ingredient) {
+            println("Ингридиент $ingredient в рецепте есть")
             return
         }
     }
