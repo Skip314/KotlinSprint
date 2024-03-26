@@ -7,12 +7,11 @@ fun main() {
 
     print("Желаете добавить еще? ")
     val inputAnsver = readln()
-    if (inputAnsver != "да") return
+    if (inputAnsver.equals("да", ignoreCase = true))
+        else return
 
     print("Какой ингредиент вы хотите добавить? ")
-    val inputIngredient = readln()
-
-    listOfIngredients.add(inputIngredient)
+    listOfIngredients.add(readln())
 
     println("Теперь в рецепте есть следующие ингредиенты: $listOfIngredients")
 }
