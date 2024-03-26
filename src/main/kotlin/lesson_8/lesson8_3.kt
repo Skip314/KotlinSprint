@@ -9,9 +9,9 @@ fun main() {
 
     val searching = arrayOfIngridient.indexOf(inputIngredientSearch)
 
-    if (searching >= 0 ) {
+    if (searching >= 0) {
         println("Ингридиент $inputIngredientSearch в списке есть")
-        }else println("Такого ингридиента в списке нет")
+    } else println("Такого ингридиента в списке нет")
 
 
 }
