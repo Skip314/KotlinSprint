@@ -5,7 +5,7 @@ fun main() {
     print("Хотите сыграть? ")
     val answer = readln()
 
-    if (answer != "да") return
+    if (answer.equals("да", ignoreCase = true) != true) return
 
     val playerResult = dropDice()
     println("Ваш бросок = $playerResult")
