@@ -12,9 +12,10 @@ class weatherDayLs3(
 
     fun printWeather() {
 
-        println("Температура днем: ${dayTemp-273}, ночью ${nightTemp-273}, осадки: ${isOsadki}")
+        println("Температура днем: ${dayTemp - 273}, ночью ${nightTemp - 273}, осадки: ${isOsadki}")
     }
 }
+
 fun main() {
 
     val day1 = weatherDayLs3(300, 280, true)
