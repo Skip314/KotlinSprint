@@ -42,7 +42,7 @@ fun main() {
 
     println("Средняя ночная температура в месяце: ${day1.getMidNumList(day1.listOfWeatherDay)}")
     println("Средняя ночная температура в месяце: ${day1.getMidNumList(day1.listOfWeatherNight)}")
-    println("Колличество дней с осадками: ${day1.listOfWeatherOsadki.count{ it }}")
+    println("Колличество дней с осадками: ${day1.listOfWeatherOsadki.count { it }}")
 }
 
 const val DAY_IN_MONTH = 30
