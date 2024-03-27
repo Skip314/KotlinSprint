@@ -29,7 +29,4 @@ fun main() {
 
     day1.printWeather()
     day2.printWeather()
-
-
-
 }
