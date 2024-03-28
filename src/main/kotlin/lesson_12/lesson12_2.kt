@@ -1,21 +1,21 @@
 package org.example.lesson_12
 
-class weatherDayControl(
+class WeatherDayControl(
 
     var dayTemp: Int,
     var nightTemp: Int,
-    var isOsadki: Boolean,
+    var isRain: Boolean,
 ) {
 
     fun printWeather() {
 
-        println("Температура днем: ${dayTemp}, ночью ${nightTemp}, осадки: ${isOsadki}")
+        println("Температура днем: ${dayTemp}, ночью ${nightTemp}, осадки: ${isRain}")
     }
 }
 
 fun main() {
 
-    val day1 = weatherDayControl(22, 11, true)
+    val day1 = WeatherDayControl(22, 11, true)
 
     day1.printWeather()
 }
