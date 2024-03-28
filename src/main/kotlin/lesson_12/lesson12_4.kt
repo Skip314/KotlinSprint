@@ -6,12 +6,12 @@ class weatherDayLs3(
     nightTemp: Int,
     isOsadki: Boolean,
 ) {
-    var dayTemp = dayTemp
-    var nightTemp = nightTemp
+    var dayTemp = dayTemp - TRANSLATE_KELVIN
+    var nightTemp = nightTemp - TRANSLATE_KELVIN
     var isOsadki = isOsadki
 
     init {
-        println("Температура днем: ${dayTemp - 273}, ночью ${nightTemp - 273}, осадки: ${isOsadki}")
+        println("Температура днем: ${dayTemp}, ночью ${nightTemp}, осадки: ${isOsadki}")
 
     }
 }
@@ -20,3 +20,5 @@ fun main() {
 
     val day1 = weatherDayLs3(300, 280, true)
 }
+
+const val TRANSLATE_KELVIN = 273
