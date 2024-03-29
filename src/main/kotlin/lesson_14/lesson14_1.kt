@@ -1,6 +1,6 @@
 package org.example.lesson_14
 
-open class Liner(
+open class Liner2(
 
     val name: String,
     val speed: Int = 10,
@@ -21,9 +21,9 @@ open class Liner(
     }
 }
 
-class IceBreakerShip(
+class IceBreakerShip2(
     name: String,
-) : Liner(name, speed = 8, cargo = 50, passenger = 10, iceBreaker = true){
+) : Liner2(name, speed = 8, cargo = 50, passenger = 10, iceBreaker = true){
 
     override fun download() {
 
@@ -31,13 +31,13 @@ class IceBreakerShip(
     }
 }
 
-class CargoShip(
+class CargoShip2(
     name: String,
     speed: Int = 9,
     cargo: Int = 500,
     passenger: Int = 15,
     iceBreaker: Boolean = false,
-) : Liner(name, speed, cargo, passenger, iceBreaker){
+) : Liner2(name, speed, cargo, passenger, iceBreaker){
 
     override fun download() {
 
@@ -47,15 +47,15 @@ class CargoShip(
 
 fun main() {
 
-    val ship1 = Liner("Legion")
+    val ship1 = Liner2("Legion")
     ship1.download()
     ship1.showClass()
 
-    val ship2 = IceBreakerShip("Kapitan")
+    val ship2 = IceBreakerShip2("Kapitan")
     ship2.download()
     ship2.showClass()
 
-    val ship3 = CargoShip("Front")
+    val ship3 = CargoShip2("Front")
     ship3.download()
     ship3.showClass()
 }
