@@ -55,8 +55,7 @@ class Rectangle(
 }
 
 fun main() {
-    val listOfFigure = mutableListOf<Figure>()
-
+    val listOfFigure: MutableList<Any> = mutableListOf()
     val circle1 = Circle("white", 15)
     listOfFigure.add(circle1)
 
@@ -68,6 +67,27 @@ fun main() {
 
     val rectangle2 = Rectangle("black", 2, 4)
     listOfFigure.add(rectangle1)
+
+    var sumPerimeterBlackFigure = 0.0
+    var sumAreaWhiteFigure = 0.0
+
+
+    for (i in listOfFigure) {
+        when (i) {
+            is Circle -> if (i.color == "black") sumPerimeterBlackFigure += i.area
+            is Rectangle -> if (i.color == "black") sumPerimeterBlackFigure += i.area
+        }
+    }
+
+    for (i in listOfFigure) {
+        when (i) {
+            is Circle -> if (i.color == "white") sumAreaWhiteFigure += i.area
+            is Rectangle -> if (i.color == "white") sumAreaWhiteFigure += i.area
+        }
+    }
+
+    println("Сумма периметров всех черных фигур: $sumPerimeterBlackFigure")
+    println("Сумма площадей всех белых фигур: $sumAreaWhiteFigure")
 }
 
 const val PI = 3.14
