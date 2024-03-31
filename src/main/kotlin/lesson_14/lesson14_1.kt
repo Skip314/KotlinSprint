@@ -1,7 +1,6 @@
 package org.example.lesson_14
 
 open class Liner2(
-
     val name: String,
     val speed: Int = 10,
     val cargo: Int = 200,
