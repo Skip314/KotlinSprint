@@ -7,23 +7,25 @@ open class Liner2(
     val cargo: Int = 200,
     val passenger: Int = 30,
     val iceBreaker: Boolean = false,
-){
+) {
     open fun download() {
 
         println("Лайнер $name выдвигает горизонтальный трап со шкафута для погрузки")
     }
 
-    fun showClass(){
+    fun showClass() {
 
-        println("Название корабля: $name, скорость: $speed, грузоподъёмность: " +
-                "$cargo, пассажировместимость: $passenger, ледокол: $iceBreaker")
+        println(
+            "Название корабля: $name, скорость: $speed, грузоподъёмность: " +
+                    "$cargo, пассажировместимость: $passenger, ледокол: $iceBreaker"
+        )
         println()
     }
 }
 
 class IceBreakerShip2(
     name: String,
-) : Liner2(name, speed = 8, cargo = 50, passenger = 10, iceBreaker = true){
+) : Liner2(name, speed = 8, cargo = 50, passenger = 10, iceBreaker = true) {
 
     override fun download() {
 
@@ -33,11 +35,7 @@ class IceBreakerShip2(
 
 class CargoShip2(
     name: String,
-    speed: Int = 9,
-    cargo: Int = 500,
-    passenger: Int = 15,
-    iceBreaker: Boolean = false,
-) : Liner2(name, speed, cargo, passenger, iceBreaker){
+) : Liner2(name, speed = 9, cargo = 500, passenger = 15, iceBreaker = false) {
 
     override fun download() {
 
