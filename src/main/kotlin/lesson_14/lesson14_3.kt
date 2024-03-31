@@ -55,18 +55,20 @@ class Rectangle(
 }
 
 fun main() {
+
     val listOfFigure: MutableList<Any> = mutableListOf()
+
     val circle1 = Circle("white", 15)
     listOfFigure.add(circle1)
 
     val circle2 = Circle("black", 3)
-    listOfFigure.add(circle1)
+    listOfFigure.add(circle2)
 
     val rectangle1 = Rectangle("white", 12, 13)
     listOfFigure.add(rectangle1)
 
     val rectangle2 = Rectangle("black", 2, 4)
-    listOfFigure.add(rectangle1)
+    listOfFigure.add(rectangle2)
 
     var sumPerimeterBlackFigure = 0.0
     var sumAreaWhiteFigure = 0.0
