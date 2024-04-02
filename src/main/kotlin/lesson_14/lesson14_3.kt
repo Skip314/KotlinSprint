@@ -11,21 +11,23 @@ abstract class Figure(
 class Circle(
     color: String,
     private val radius: Int,
-
     ) : Figure(color) {
 
     var perimeter: Double = 0.0
     var area: Double = 0.0
 
     override fun countPerimeter() {
+
         perimeter = 2.0 * PI * radius
     }
 
     override fun countArea() {
+
         area = PI * radius * radius
     }
 
     init {
+
         countArea()
         countPerimeter()
     }
@@ -41,14 +43,17 @@ class Rectangle(
     var area: Double = 0.0
 
     override fun countPerimeter() {
+
         perimeter = width * 2.0 + height * 2.0
     }
 
     override fun countArea() {
+
         area = (width * height).toDouble()
     }
 
     init {
+
         countArea()
         countPerimeter()
     }
@@ -76,15 +81,15 @@ fun main() {
 
     for (i in listOfFigure) {
         when (i) {
-            is Circle -> if (i.color == "black") sumPerimeterBlackFigure += i.area
-            is Rectangle -> if (i.color == "black") sumPerimeterBlackFigure += i.area
-        }
-    }
+            is Circle -> {
+                if (i.color == BLACK_COLOR) sumPerimeterBlackFigure += i.area
+                if (i.color == WHITE_COLOR) sumAreaWhiteFigure += i.area
+            }
 
-    for (i in listOfFigure) {
-        when (i) {
-            is Circle -> if (i.color == "white") sumAreaWhiteFigure += i.area
-            is Rectangle -> if (i.color == "white") sumAreaWhiteFigure += i.area
+            is Rectangle -> {
+                if (i.color == BLACK_COLOR) sumPerimeterBlackFigure += i.area
+                if (i.color == WHITE_COLOR) sumAreaWhiteFigure += i.area
+            }
         }
     }
 
@@ -93,3 +98,5 @@ fun main() {
 }
 
 const val PI = 3.14
+const val BLACK_COLOR = "black"
+const val WHITE_COLOR = "white"
