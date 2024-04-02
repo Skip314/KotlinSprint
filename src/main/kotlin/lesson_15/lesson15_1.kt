@@ -4,7 +4,7 @@ interface Fly {
 
     var name: String
 
-    fun moveFly(){
+    fun moveFly() {
         print("${name} взлетел")
         println()
     }
@@ -93,7 +93,7 @@ class Seagull(
     override var name: String,
     isSwim: Boolean = false,
     isFly: Boolean = true,
-) : Fly, Creatures(isSwim, isFly){
+) : Fly, Creatures(isSwim, isFly) {
 
     override fun moveFly() {
 
