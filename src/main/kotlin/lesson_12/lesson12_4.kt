@@ -1,6 +1,6 @@
 package org.example.lesson_12
 
-class WeatherDayLs3(
+class WeatherDayLs4(
 
     dayTemp: Int,
     nightTemp: Int,
@@ -18,7 +18,7 @@ class WeatherDayLs3(
 
 fun main() {
 
-    val day1 = WeatherDayLs3(300, 280, true)
+    val day1 = WeatherDayLs4(300, 280, true)
 }
 
-const val TRANSLATE_KELVIN = 273
+const val TRANSLATE_KELVIN: Int = 273

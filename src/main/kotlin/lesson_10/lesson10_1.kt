@@ -7,10 +7,10 @@ fun main() {
 
     if (answer.equals("да", ignoreCase = true) != true) return
 
-    val playerResult = dropDice()
+    val playerResult = dropDice1()
     println("Ваш бросок = $playerResult")
 
-    val compResult = dropDice()
+    val compResult = dropDice1()
     println("Бросок компьютера = $compResult")
 
     when {
@@ -20,7 +20,7 @@ fun main() {
     }
 }
 
-fun dropDice(): Int {
+fun dropDice1(): Int {
     val rangeDice = 1..6
     return rangeDice.random()
 }

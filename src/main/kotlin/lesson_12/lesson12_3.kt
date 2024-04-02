@@ -6,8 +6,8 @@ class WeatherDayLs3(
     nightTemp: Int,
     isRain: Boolean,
 ) {
-    var dayTemp = dayTemp - TRANSLATE_KELVIN
-    var nightTemp = nightTemp - TRANSLATE_KELVIN
+    var dayTemp = dayTemp - TRANSLATE_KELVIN1
+    var nightTemp = nightTemp - TRANSLATE_KELVIN1
     var isRain = isRain
 
     fun printWeather() {
@@ -22,4 +22,4 @@ fun main() {
     day1.printWeather()
 }
 
-const val TRANSLATE_KELVIN = 273
+const val TRANSLATE_KELVIN1: Int = 273
