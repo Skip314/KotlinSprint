@@ -1,14 +1,15 @@
 package org.example.lesson_15
 
-abstract class Unit(
+abstract class Unit1(
     val name: String,
     val isAdmin: Boolean,
 ) {
 
-    var userMap = mutableMapOf<Int, User>()
-
-    var messageMap = mutableMapOf<Int, String>()
-    var messageId = 0
+    companion object {
+        var userMap = mutableMapOf<Int, User>()
+        var messageMap = mutableMapOf<Int, String>()
+        var messageId = 0
+    }
 
     open fun readMessage() {
 
@@ -18,7 +19,7 @@ abstract class Unit(
 class User(
     name: String,
     isAdmin: Boolean = false,
-) : Unit(name, isAdmin) {
+) : Unit1(name, isAdmin) {
 
     val userId: Int
 
@@ -57,9 +58,6 @@ class User(
 fun main() {
 
     val admin1 = User("admin", true)
-    admin1.printMap()
-
-    admin1.message()
 
     val user1 = User("Ivan")
 
@@ -67,10 +65,5 @@ fun main() {
 
     val user3 = User("Alan")
 
-    admin1.delUser(2)
-
     admin1.printMap()
-    user1.printMap()
-    user2.printMap()
-    user3.printMap()
 }
