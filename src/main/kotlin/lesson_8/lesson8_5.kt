@@ -4,16 +4,13 @@ fun main() {
 
     print("Введите количество ингредиентов: ")
     val quantityIngredients = readln().toInt()
-    val rangeQuantityIngredient = 1..quantityIngredients
-    val arrayOfIngredients = Array(quantityIngredients) { "1" }
 
-    var indexArray = 0
+    val arrayOfIngredients = Array(quantityIngredients) { "" }
 
-    for (i in rangeQuantityIngredient) {
+    for (i in 1..quantityIngredients) {
         print("Введите ваш ингредиент: ")
         val inputIngredient = readln()
-        arrayOfIngredients.set(indexArray, inputIngredient)
-        indexArray++
+        arrayOfIngredients[i-1] = inputIngredient
     }
 
     printArray(arrayOfIngredients)
