@@ -14,5 +14,6 @@ fun main() {
     listOfFish.add(Fish.ANGEL_FISH.name1)
     listOfFish.add(Fish.GOLD_FISH.name1)
     listOfFish.add(Fish.SIAMESE_FIGHTING_FISH.name1)
+
     println(listOfFish)
 }
