@@ -1,7 +1,5 @@
 package org.example.lesson_16
 
-import kotlin.properties.Delegates
-
 class Player(
     val name: String,
     var health: Int = 100,
