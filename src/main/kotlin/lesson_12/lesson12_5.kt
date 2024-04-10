@@ -1,5 +1,7 @@
 package org.example.lesson_12
 
+import org.example.lesson_7.getIntRandom
+
 class WeatherDayLs5(
     val dayTemp: Int,
     val nightTemp: Int,
@@ -10,11 +12,6 @@ class WeatherDayLs5(
     val listOfWeatherRain: MutableList<Boolean> = mutableListOf()
 
     val tempRange = -30..50
-
-    fun printWeatherDay() {
-
-        println("Температура днем: ${dayTemp}, ночью ${nightTemp}, осадки: ${isOsadki}")
-    }
 
     fun generateWeatherOfMonth() {
 
