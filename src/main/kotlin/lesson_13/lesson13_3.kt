@@ -2,17 +2,10 @@ package org.example.lesson_13
 
 class Contact3(
 
-    val name: String,
-    val number: Long,
+    private val name: String,
+    private val number: Long,
     var company: String? = null
-) {
-
-    fun printContact() {
-
-        if (company == null) company = "<не указано>"
-        println("Имя: $name, Номер: $number, Компания: $company")
-    }
-}
+)
 
 fun main() {
 
@@ -26,7 +19,6 @@ fun main() {
 
     for (contact in listOfContact) {
 
-        if (contact.company == null) contact.company = "<не указано>"
-        println("Имя: ${contact.name}, Номер: ${contact.number}, Компания: ${contact.company}")
+        if (contact.company != null || contact.company != "null") println(contact.company)
     }
 }
