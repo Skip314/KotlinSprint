@@ -8,26 +8,28 @@ open class Chat(
 ) {
 
     companion object {
-        val mapOfMessage = mutableMapOf<Int, Message>()
+        val messageList = mutableListOf<Message>()
     }
 
     open fun addMessage(text: String) {
 
         val message = Message(messageId, this.name, text)
-        mapOfMessage[messageId] = message
+        messageList.add(message)
 
         messageId++
     }
 
     fun addThreadMessage(parentMessageId: Int) {
 
-
+        var group = messageList.groupBy { it.messageId }
     }
 
     fun printChat() {
-
-        mapOfMessage.forEach { (key, value) ->
-            println("id:$key ${value.author}: ${value.text}")
+        messageList.forEach { message ->
+            print("ID: ${message.messageId}, ")
+            print("Author: ${message.author}, ")
+            print("Text: ${message.text} ")
+            println()
         }
     }
 }
