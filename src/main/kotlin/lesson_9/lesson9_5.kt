@@ -14,6 +14,7 @@ fun main() {
 
     val ingredients = ingredientsSet.sorted().toTypedArray()
     ingredients[0] = ingredients[0].replaceFirstChar { it.uppercaseChar() }
-    println(ingredients.contentToString())
+
+    println(ingredients.toList().joinToString())
 
 }
