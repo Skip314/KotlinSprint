@@ -1,22 +1,19 @@
 package org.example.lesson_9
 
+import org.example.lesson_7.getStringRandom
 import java.util.*
 
 fun main() {
 
-    val setIngredient = mutableSetOf<String>()
+    val ingredientsSet = mutableSetOf<String>()
 
     for (i in 1..5) {
         print("Введите ингредиент №$i ")
-        setIngredient.add(readln())
+        ingredientsSet.add(readln())
     }
 
-    setIngredient.sorted()
-    val firstElement = setIngredient.first()
-    setIngredient.remove(setIngredient.first())
+    val ingredients = ingredientsSet.sorted().toTypedArray()
+    ingredients[0] = ingredients[0].replaceFirstChar { it.uppercaseChar() }
+    println(ingredients.contentToString())
 
-    setIngredient.add(firstElement.replaceFirstChar
-    { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
-
-    println(setIngredient.sorted().joinToString())
 }
