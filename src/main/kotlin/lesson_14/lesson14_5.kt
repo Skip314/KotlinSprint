@@ -19,7 +19,10 @@ open class Chat(
         messageId++
     }
 
-    fun addThreadMessage() {}
+    fun addThreadMessage(parentMessageId: Int) {
+
+
+    }
 
     fun printChat() {
 
@@ -62,6 +65,8 @@ fun main() {
 
     val user2 = User("Oleg")
     user2.addMessage("Hi")
+
+    user1.addThreadMessage(0)
 
     chat.printChat()
 }
