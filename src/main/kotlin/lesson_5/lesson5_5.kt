@@ -4,45 +4,38 @@ import kotlin.random.Random
 
 fun main() {
 
-    val minNum = 0
-    val maxNum = 21
+    val vinNum = getVinNum()
 
-    val vinNumList = mutableListOf<Int>(getVinNum(minNum, maxNum),
-        getVinNum(minNum, maxNum), getVinNum(minNum, maxNum))
+    print("Введите поочередно три цифры: ")
+    val inputNum = listOf( readln().toInt(), readln().toInt(), readln().toInt())
 
-    println("Испытай свою удачу!")
-    println("Введите первую цифру от $minNum до $maxNum")
-    var inputNum1 = readln()!!.toInt()
-    println("Введите вторую цифру от $minNum до $maxNum")
-    var inputNum2 = readln()!!.toInt()
-    println("Введите третью цифру от $minNum до $maxNum")
-    var inputNum3 = readln()!!.toInt()
+    println(checkNum(inputNum, vinNum))
+    println("Выйгрышные числа: ${vinNum.joinToString()}")
+}
 
-    val quantityPoint = countNum(inputNum1, vinNumList) + countNum(inputNum2, vinNumList,) +
-            countNum(inputNum3, vinNumList)
+fun getVinNum(): List<Int> {
 
-    val result = when (quantityPoint) {
-        3 -> "Вы выйграли джекпот"
-        2 -> "Вы получаете крупный приз"
-        1 -> "Вы получаете утешительный приз"
-        else -> "Вы проиграли"
+    val rangeVinNum = MIN_VIN_NUM..MAX_VIN_NUM
+    val listOfVinNum = mutableSetOf<Int>()
+
+    while (listOfVinNum.size != 3){
+
+        listOfVinNum.add(rangeVinNum.random())
     }
-    println("Вы угадали $quantityPoint чисел из 3, $result")
-
+    return listOfVinNum.toList()
 }
-fun getVinNum(minNum: Int, maxNum: Int): Int {
 
-    return Random.nextInt(minNum, maxNum +1)
+fun checkNum(userNum: List<Int>, vinNum: List<Int>): String {
 
-}
-fun countNum(num: Int, list: MutableList<Int>): Int {
-    //Функция возвращает 1 если такое число есть в списке, или 0, если нет
-    val result: Int
-    if(list.contains(num) == true) {
-        result = 1
-        println("Вы угадали число:$num")
+    val check = vinNum.intersect(userNum)
+
+    return when(check.size){
+        3 -> "Вы угадали все числа и выйграли ДЖЕКПОТ!"
+        2 -> "Вы угадали 2 числа и получаете крупный приз"
+        1 -> "Вы угадали 1 число и получаете утешительный приз"
+        else -> "Вы не угадали ни одного числа :("
     }
-    else result = 0
-
-    return result
 }
+
+const val MIN_VIN_NUM = 0
+const val MAX_VIN_NUM = 42
