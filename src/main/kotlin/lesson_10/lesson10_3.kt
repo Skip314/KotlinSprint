@@ -1,7 +1,5 @@
 package org.example.lesson_10
 
-import org.w3c.dom.ranges.Range
-
 fun main() {
 
     print("Введите желаемое количество символов в пароле: ")
