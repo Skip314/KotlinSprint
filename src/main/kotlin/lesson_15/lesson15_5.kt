@@ -32,7 +32,9 @@ class Car(
         var balance = allPassenger
 
         while (balance != 0) {
+
             move()
+
             passenger = if (balance > maxPassenger) maxPassenger
             else balance
             balance -= passenger
@@ -53,7 +55,9 @@ class Truck(
         var balance = allCargo
 
         while (balance != 0) {
+
             move()
+
             cargo = if (balance > maxCargo) maxCargo
             else balance
             balance -= cargo
