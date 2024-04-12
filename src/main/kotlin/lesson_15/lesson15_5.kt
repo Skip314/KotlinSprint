@@ -1,46 +1,42 @@
 package org.example.lesson_15
 
-interface Drive {
+interface Movable {
 
     val name: String
 
-    fun start() = println("${name} начал движение")
-    fun finish() = println("${name} закончил движение")
-    fun load(outsideCargo: Int): Int
-    fun unload() = println("${name} начал разгрузку")
-    fun transportation(cargoTrans: Int)
+    fun move() = println("$name начал движение\n$name приехал")
+}
+
+interface CargoTrans {
+
+    val name: String
+
+    fun cargoTrans(allCargo: Int)
+}
+
+interface PassengerTrans {
+
+    val name: String
+
+    fun passengerTrans(allPassenger: Int)
 }
 
 class Car(
     override val name: String,
-    var passenger: Int = 0,
-    val maxPassenger: Int = 3,
-) : Drive {
+    private var passenger: Int = 0,
+    private val maxPassenger: Int = 3,
+) : Movable, PassengerTrans {
 
-    override fun load(outsideCargo: Int): Int {
-        if (outsideCargo > maxPassenger) passenger = maxPassenger
-        else passenger = outsideCargo
-        println("$name загрузил $passenger груза")
-        return outsideCargo
-    }
+    override fun passengerTrans(allPassenger: Int) {
 
-    override fun unload() {
-        super.unload()
-        println("$name разгрузил $passenger пассажира")
-        passenger = 0
-    }
-
-    override fun transportation(cargoTrans: Int) {
-
-        var balance = cargoTrans
+        var balance = allPassenger
 
         while (balance != 0) {
-            load(balance)
-            start()
-            finish()
+            move()
+            passenger = if (balance > maxPassenger) maxPassenger
+            else balance
             balance -= passenger
-            unload()
-            println("Осталось $balance пассажиров")
+            println("$name перевез $passenger груза")
             println()
         }
     }
@@ -48,34 +44,20 @@ class Car(
 
 class Truck(
     override val name: String,
-    var cargo: Int = 0,
-    var maxCargo: Int = 2,
-) : Drive {
+    private var cargo: Int = 0,
+    private var maxCargo: Int = 2,
+) : Movable, CargoTrans {
 
-    override fun load(outsideCargo: Int): Int {
-        if (outsideCargo > maxCargo) cargo = maxCargo
-        else cargo = outsideCargo
-        println("$name загрузил $cargo груза")
-        return outsideCargo
-    }
+    override fun cargoTrans(allCargo: Int) {
 
-    override fun unload() {
-        super.unload()
-        println("$name разгрузил $cargo груза")
-        cargo = 0
-    }
-
-    override fun transportation(cargoTrans: Int) {
-
-        var balance = cargoTrans
+        var balance = allCargo
 
         while (balance != 0) {
-            load(balance)
-            start()
-            finish()
+            move()
+            cargo = if (balance > maxCargo) maxCargo
+            else balance
             balance -= cargo
-            unload()
-            println("Осталось $balance груза")
+            println("$name перевез $cargo груза")
             println()
         }
     }
@@ -87,8 +69,8 @@ fun main() {
     val passenger = 6
 
     val car = Car("Mazda")
-    car.transportation(passenger)
+    car.passengerTrans(passenger)
 
     val truck = Truck("Volvo")
-    truck.transportation(cargo)
+    truck.cargoTrans(cargo)
 }
