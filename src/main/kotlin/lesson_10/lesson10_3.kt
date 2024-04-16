@@ -11,7 +11,7 @@ fun main() {
 
 fun createPass(quantity: Int) {
 
-    var quantityRange = 1..quantity
+    val quantityRange = 1..quantity
     val spec = '\u0020'..'\u002f'
     val range = 0..9
 
