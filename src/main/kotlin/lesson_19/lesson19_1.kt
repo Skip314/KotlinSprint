@@ -9,10 +9,5 @@ enum class Fish(val name1: String) {
 
 fun main() {
 
-    val listOfFish: MutableList<String> = mutableListOf()
-    listOfFish.add(Fish.GUPPY.name1)
-    listOfFish.add(Fish.ANGEL_FISH.name1)
-    listOfFish.add(Fish.GOLD_FISH.name1)
-    listOfFish.add(Fish.SIAMESE_FIGHTING_FISH.name1)
-    println(listOfFish)
+    println("Вы можете добавить следующих рыб: ${Fish.entries.joinToString { it.name1 }}")
 }
