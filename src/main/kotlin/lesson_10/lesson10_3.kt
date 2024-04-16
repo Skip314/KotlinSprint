@@ -5,11 +5,11 @@ fun main() {
     print("Введите желаемое количество символов в пароле: ")
     val inputQuantitySimvol = readln().toInt()
 
-    getRandomSimvol(inputQuantitySimvol)
+    createPass(inputQuantitySimvol)
 
 }
 
-fun getRandomSimvol(quantity: Int) {
+fun createPass(quantity: Int) {
 
     var quantityRange = 1..quantity
     val spec = '\u0020'..'\u002f'
