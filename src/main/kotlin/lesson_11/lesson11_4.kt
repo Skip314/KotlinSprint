@@ -1,18 +1,19 @@
 package org.example.lesson_11
 
-class Obj(
-    val id: Int,
-    val category: String,
+class Category(
     val name: String,
-    val picture: String,
-    val tegFavorites: Boolean = false,
+    val icon: String,
+    val destination: String,
+)
 
-){
-    val recept: MutableList<String> = mutableListOf()
-}
-fun main() {
+class Recipe(
+    val name: String,
+    val quality: Int,
+    val ingredients: List<Ingredient>,
+    val cooking: String
+)
 
-    val burgerMiC = Obj(
-        0,"burgers","бургер с грибами и сыром","burger.png"
-    )
-}
+class Ingredient(
+    val name: String,
+    val quality: Int
+)
