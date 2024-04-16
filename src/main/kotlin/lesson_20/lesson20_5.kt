@@ -7,27 +7,32 @@ class Robot(
     val name: String,
 ) {
 
-    fun say() {
+    fun say(string: String?) {
 
-        println(
-            "$name: ${
+        if (string == null) {
+            println(
+                "$name: ${
+                    when (getIntRandom(1..5).toInt()) {
 
-                when (getIntRandom(1..5).toInt()) {
-
-                    1 -> "Привет"
-                    2 -> "Меня зовут $name"
-                    3 -> "Ку-ку"
-                    4 -> "Тебе повезло"
-                    else -> "Ты не такой как все"
-                }
-            }"
-        )
+                        1 -> "Привет"
+                        2 -> "Меня зовут $name"
+                        3 -> "Ку-ку"
+                        4 -> "Тебе повезло"
+                        else -> "Ты не такой как все"
+                    }
+                }"
+            )
+        }
+        else println(string)
     }
+
+    fun setModifier() {}
 }
 
 fun main() {
 
     val robot = Robot("Boris")
 
-    robot.say()
+    robot.say(null)
+    robot.setModifier()
 }
