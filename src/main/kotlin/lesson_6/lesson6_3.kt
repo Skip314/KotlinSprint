@@ -14,5 +14,5 @@ fun main() {
         Thread.sleep(1000)
     }
 
-    println("Прошло секунд: $insertSecond ")
+    println("Время вышло")
 }
