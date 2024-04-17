@@ -5,6 +5,11 @@ enum class Category(categoryName: String) {
     STATIONERY("Канцелярские товары"),
     OTHERS("Другое");
 
+    fun getCategoryName() = when (this) {
+        CLOTHING -> "Вещи"
+        STATIONERY -> "Канцелярские товары"
+        else -> "Другое"
+    }
 }
 
 class Item(
@@ -14,15 +19,16 @@ class Item(
 ) {
     fun printInfo() {
 
-        println("$name, ${category.categoryName}")
+        println("ID: $id, $name, ${category.getCategoryName()}")
     }
-
 }
 
 fun main() {
 
-    val clothing = Item(0, "Short", Category.CLOTHING)
+    val clothing = Item(0, "Майка А", Category.CLOTHING)
+    val other = Item(1, "Штора", Category.OTHERS)
 
     clothing.printInfo()
+    other.printInfo()
 }
 
