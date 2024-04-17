@@ -1,12 +1,10 @@
 package org.example.lesson_16
 
-import kotlin.random.Random
-
 class Dice() {
 
-    private val res: Int = Random.nextInt(1, 6)
+    private val res: Int = (1..6).random()
 
-    fun printDice() = println(res)
+    fun printDice() = println("На кубике выпало $res")
 }
 
 fun main() {
