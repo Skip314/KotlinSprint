@@ -4,13 +4,12 @@ fun main() {
 
     print("Введите количество секунд, которое надо засечь: ")
 
-    val insertSecond = readln().toInt()
-    var remSecond = insertSecond
+    var insertSecond = readln().toInt()
 
-    while (remSecond != 0) {
+    while (insertSecond != 0) {
 
-        println("Осталось секунд: $remSecond")
-        remSecond--
+        println("Осталось секунд: $insertSecond")
+        insertSecond--
         Thread.sleep(1000)
     }
 
