@@ -9,6 +9,15 @@ class WeatherServer(){
     }
 }
 
-class Temperature()
+class Temperature(
+    val temperature: Int
+)
 
-class PrecipitationAmount()
+class PrecipitationAmount(
+    val amount: Int
+)
+fun main() {
+
+    val temperature = Temperature(30)
+    val amount = PrecipitationAmount(20)
+}
