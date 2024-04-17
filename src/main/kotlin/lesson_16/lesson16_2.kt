@@ -13,6 +13,7 @@ class Circle(
         println("Площадь окружности ${pi * radius * radius}")
     }
 }
+
 fun main() {
 
     val ring = Circle(12)
