@@ -13,10 +13,10 @@ fun main() {
         arrayOfIngredients[i-1] = inputIngredient
     }
 
-    printArray(arrayOfIngredients)
+    //printArray(arrayOfIngredients)
 }
 
-fun printArray(array: Array<String>) {
+//fun printArray(array: Array<String>) {
 
-    for (i in array) print("$i| ")
-}
+    //for (i in array) print("$i| ")
+//}
