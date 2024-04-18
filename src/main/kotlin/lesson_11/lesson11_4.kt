@@ -4,6 +4,7 @@ class Category(
     val name: String,
     val icon: String,
     val destination: String,
+    val recipe: Recipe,
 )
 
 class Recipe(
