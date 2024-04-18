@@ -1,9 +1,9 @@
 package org.example.lesson_19
 
-enum class Category(categoryName: String) {
-    CLOTHING("Вещи"),
-    STATIONERY("Канцелярские товары"),
-    OTHERS("Другое");
+enum class Category{
+    CLOTHING,
+    STATIONERY,
+    OTHERS;
 
     fun getCategoryName() = when (this) {
         CLOTHING -> "Вещи"
