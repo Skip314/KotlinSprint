@@ -18,8 +18,7 @@ class Contact2(
 
     fun printContact() {
 
-        if (company == null) company = "<не указано>"
-        println("Имя: $name, Номер: $number, Компания: $company")
+        println("Имя: $name, Номер: $number, Компания: ${company ?: "<не указано>"}")
     }
 }
 
