@@ -5,14 +5,15 @@ class User(
     private val pass: String,
 ) {
 
-    fun valid() {
-        val inputPass = readln()
-        println(inputPass == this.pass)
+    fun valid(inputPass: String): Boolean {
+        return inputPass == this.pass
     }
 }
 
 fun main() {
 
     val user = User("admin", "123")
-    user.valid()
+    print("Введите пароль: ")
+    val inputPass = readln()
+    println("Введенный пароль: ${user.valid(inputPass)}")
 }
