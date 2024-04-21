@@ -1,6 +1,4 @@
-package org.example
-
-import kotlin.math.log
+package org.example.lesson_10
 
 fun main() {
 
