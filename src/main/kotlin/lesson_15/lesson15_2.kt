@@ -1,6 +1,9 @@
 package org.example.lesson_15
 
-abstract class WeatherStationStatus()
+abstract class WeatherStationStatus(
+    val temperature: Int,
+    val amount: Int,
+)
 
 class WeatherServer(){
 
@@ -10,14 +13,16 @@ class WeatherServer(){
 }
 
 class Temperature(
-    val temperature: Int
-)
+    temperature: Int,
+    amount: Int
+): WeatherStationStatus(temperature, amount)
 
 class PrecipitationAmount(
-    val amount: Int
-)
+    temperature: Int,
+    amount: Int
+): WeatherStationStatus(temperature, amount)
 fun main() {
 
-    val temperature = Temperature(30)
-    val amount = PrecipitationAmount(20)
+    val temperature = Temperature(30, 30)
+    val amount = PrecipitationAmount(20, 25)
 }
