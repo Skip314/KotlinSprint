@@ -21,8 +21,8 @@ class Robot(
                 else -> "Ты не такой как все"
             }
         }
-        if (isModifier) println(phrase().reversed())
-        else println(phrase())
+        if (isModifier) println("$name: ${phrase().reversed()}")
+        else println("$name: ${phrase()}")
     }
 
     fun setModifier(mod: Boolean) {
@@ -37,5 +37,4 @@ fun main() {
     robot.say()
     robot.setModifier(true)
     robot.say()
-
 }
