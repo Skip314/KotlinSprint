@@ -1,14 +1,17 @@
 package org.example.lesson_17
 
-class User {
+class User(
+    _login: String,
+    _pass: String,
+) {
 
-    var login: String = "admin"
+    var login: String = _login
         set(value) {
-            field
+            field = value
             println("Логин успешно изменен")
         }
-    var pass: String = "123"
-        get() = { pass.length * "*" }.toString()
+    var pass: String = _pass
+        get() = "*".repeat(field.length)
         set(value) {
             println("Вы не можете изменить пароль")
         }
@@ -16,8 +19,8 @@ class User {
 
 fun main() {
 
-    val user = User()
+    val user = User("admin", "0000")
     user.login = "Oleg"
-    user.pass ="1234"
+    user.pass ="123"
     println(user.pass)
 }
