@@ -6,7 +6,7 @@ class Robot(
     val name: String,
 ) {
 
-    var isModifier = false
+    private var isModifier = false
 
     fun say() {
 
@@ -21,12 +21,13 @@ class Robot(
                 else -> "Ты не такой как все"
             }
         }
-        if (isModifier) println(phrase.toString().reversed())
-        else println(phrase.toString())
+        if (isModifier) println(phrase().reversed())
+        else println(phrase())
     }
 
-    fun setModifier(boolean: Boolean): () -> Unit = { isModifier = boolean }
-
+    fun setModifier(mod: Boolean) {
+        isModifier = mod
+    }
 }
 
 fun main() {
