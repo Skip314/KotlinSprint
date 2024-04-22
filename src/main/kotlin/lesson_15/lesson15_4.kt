@@ -5,6 +5,7 @@ abstract class Item(
     open val name: String,
     open var stock: Int,
 )
+
 class Instrument(
     override val name: String,
     override var stock: Int,
@@ -14,9 +15,9 @@ class Instrument(
 
         println()
         println("Выполняется поиск")
-        }
     }
 }
+
 
 class Component(
     override val name: String,
