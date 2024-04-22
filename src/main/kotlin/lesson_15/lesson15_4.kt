@@ -4,11 +4,7 @@ package org.example.lesson_15
 abstract class Item(
     open val name: String,
     open var stock: Int,
-) {
-    val components = mutableListOf<Component>()
-
-}
-
+)
 class Instrument(
     override val name: String,
     override var stock: Int,
@@ -18,8 +14,6 @@ class Instrument(
 
         println()
         println("Выполняется поиск")
-        for (component in components) {
-            if (component.general == this) println("${component.name} ${component.stock} шт.")
         }
     }
 }
@@ -28,12 +22,7 @@ class Component(
     override val name: String,
     override var stock: Int,
     val general: Instrument,
-) : Item(name, stock) {
-
-    init {
-        components.add(this)
-    }
-}
+) : Item(name, stock)
 
 interface Search {
 
