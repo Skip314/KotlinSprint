@@ -1,26 +1,26 @@
 package org.example.lesson_17
 
 class Folder(
-    name: String,
-    quantity: Int,
+    _name: String,
+    _quantity: Int,
     val isSecret: Boolean = true
 ) {
-    var name = "Root"
+    var name = _name
         get() = if (isSecret) "Секретная папка" else field
 
-    var quantity = 2
+    var quantity = _quantity
         get() = if (isSecret) 0 else field
 
 }
 
 fun main() {
 
-    val fold = Folder("Rood", 2, false)
+    val fold = Folder("Good", 4, false)
     println(fold.name)
     println(fold.quantity)
     println()
 
-    val fold2 = Folder("Root", 2)
+    val fold2 = Folder("Moot", 2)
     println(fold2.name)
     println(fold2.quantity)
 }
