@@ -25,9 +25,7 @@ class Robot(
         else println(phrase.toString())
     }
 
-    fun setModifier(boolean: Boolean): () -> Unit {
-        isModifier = boolean
-    }
+    fun setModifier(boolean: Boolean): () -> Unit = { isModifier = boolean }
 
 }
 
