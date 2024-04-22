@@ -1,27 +1,27 @@
 package org.example.lesson_14
 
-var userId = 0
 var messageId = 0
 
 open class Chat(
     open val name: String,
 ) {
 
-    companion object {
-        val messageList = mutableListOf<Message>()
-    }
+    val messageList = mutableListOf<Message>()
 
-    open fun addMessage(text: String) {
+    open fun addMessage(author: String, text: String) {
 
-        val message = Message(messageId, this.name, text)
+
+        val message = Message(messageId, author, text)
         messageList.add(message)
 
         messageId++
     }
 
-    fun addThreadMessage(parentMessageId: Int) {
+    fun addThreadMessage(author: String, text: String, parentMessageId: Int) {
 
-        var group = messageList.groupBy { it.messageId }
+        val threadMessage = ChildMessage(messageId, author, text, parentMessageId)
+        messageList.add(threadMessage)
+        messageId++
     }
 
     fun printChat() {
@@ -34,16 +34,6 @@ open class Chat(
     }
 }
 
-data class User(
-    override val name: String,
-) : Chat(name) {
-
-    val id: Int = userId
-
-    init {
-        userId++
-    }
-}
 
 open class Message(
     val messageId: Int,
@@ -55,20 +45,18 @@ class ChildMessage(
     messageId: Int,
     author: String,
     text: String,
-    val childMessageId: Int
+    val parentMessageId: Int
 ) : Message(messageId, author, text)
 
 fun main() {
 
     val chat = Chat("Чат")
 
-    val user1 = User("Fedor")
-    user1.addMessage("Привет, я Fedor")
+    val message1 = chat.addMessage("Fedor", "Hi")
+    val message2 = chat.addMessage("Lena", "Hi, f")
+    val thMessage1 = chat.addThreadMessage("Fedor", "my name is Fedor", 0)
 
-    val user2 = User("Oleg")
-    user2.addMessage("Hi")
 
-    user1.addThreadMessage(0)
 
     chat.printChat()
 }
