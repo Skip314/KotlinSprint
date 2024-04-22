@@ -2,11 +2,11 @@ package org.example.lesson_17
 
 class Order4(
     val orderNum: Int,
-    place: String = STORE,
+    _place: String = STORE,
 ) {
     var traveling = 0
 
-    var place = STORE
+    var place = _place
         set(value) {
             field = value
             if (field == SORTING) {
