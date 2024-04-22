@@ -2,37 +2,41 @@ package org.example.lesson_20
 
 import org.example.lesson_7.getIntRandom
 
-
 class Robot(
     val name: String,
 ) {
 
-    fun say(string: String?) {
+    var isModifier = false
 
-        if (string == null) {
-            println(
-                "$name: ${
-                    when (getIntRandom(1..5).toInt()) {
+    fun say() {
 
-                        1 -> "Привет"
-                        2 -> "Меня зовут $name"
-                        3 -> "Ку-ку"
-                        4 -> "Тебе повезло"
-                        else -> "Ты не такой как все"
-                    }
-                }"
-            )
+        val phrase: () -> String = {
+
+            when (getIntRandom(1..5).toInt()) {
+
+                1 -> "Привет"
+                2 -> "Меня зовут $name"
+                3 -> "Ку-ку"
+                4 -> "Тебе повезло"
+                else -> "Ты не такой как все"
+            }
         }
-        else println(string)
+        if (isModifier) println(phrase.toString().reversed())
+        else println(phrase.toString())
     }
 
-    fun setModifier() {}
+    fun setModifier(boolean: Boolean): () -> Unit {
+        isModifier = boolean
+    }
+
 }
 
 fun main() {
 
     val robot = Robot("Boris")
 
-    robot.say(null)
-    robot.setModifier()
+    robot.say()
+    robot.setModifier(true)
+    robot.say()
+
 }
