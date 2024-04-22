@@ -15,7 +15,11 @@ class Order(
 fun main() {
 
     val order = Order(ASSEMBLY, 1)
-    order.sendRequest(READY)
+    changeStatus(order, READY)
+}
+
+fun changeStatus(order: Order, newStatus: String) {
+    order.sendRequest(newStatus)
 }
 
 const val READY = "Готов к получению"
