@@ -1,28 +1,40 @@
 package org.example.lesson_15
 
-abstract class WeatherStationStatus(
-    val temperature: Int,
-    val amount: Int,
-)
-
-class WeatherServer(){
-
-    fun sendResult(){
-        println("Сообщение отправлено")
-    }
+abstract class WeatherStationStats {
+    abstract fun getData()
 }
 
 class Temperature(
-    temperature: Int,
-    amount: Int
-): WeatherStationStatus(temperature, amount)
+    private val temperature: Int
+) : WeatherStationStats() {
+
+    override fun getData() {
+        println("Текущая температура: $temperature")
+    }
+}
 
 class PrecipitationAmount(
-    temperature: Int,
-    amount: Int
-): WeatherStationStatus(temperature, amount)
+    private val amount: Int
+) : WeatherStationStats() {
+
+    override fun getData() {
+        println("Количество осадков: $amount")
+    }
+}
+
+class WeatherServer {
+    fun sendMessage(weatherData: WeatherStationStats) {
+        print("Отправка данных на сервер: ")
+        weatherData.getData()
+    }
+}
+
 fun main() {
 
-    val temperature = Temperature(30, 30)
-    val amount = PrecipitationAmount(20, 25)
+    val temperature = Temperature(20)
+    val amount = PrecipitationAmount(10)
+
+    val weatherServer = WeatherServer()
+    weatherServer.sendMessage(temperature)
+    weatherServer.sendMessage(amount)
 }
