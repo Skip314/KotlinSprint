@@ -14,7 +14,7 @@ class Contact4(
         }
     }
 
-    fun createContact(listOfContact: MutableList<Contact4>) {
+    fun createContact(): Contact4? {
 
         print("Введите имя контакта: ")
         val name = readln()
@@ -24,13 +24,13 @@ class Contact4(
         if (number == null) {
             println("Вы не ввели номер, контакт не был создан")
             println()
-            return
+            return null
         } else {
             print("Введите компанию контакта: ")
             var company: String? = readln()
             if (company == "") company = null
 
-            listOfContact.add(Contact4(name, number, company))
+            return Contact4(name, number, company)
             println()
         }
     }
@@ -43,7 +43,8 @@ fun main() {
 
     val contact = Contact4("Fedor", 888)
     listOfContact.add(contact)
-    val contact1 = contact.createContact(listOfContact)
+    val contact1 = contact.createContact()
+    if (contact1!=null) listOfContact.add(contact1)
 
     contact.printContact(listOfContact)
 }
