@@ -7,6 +7,7 @@ open class Chat(
 ) {
 
     val messageList = mutableListOf<Message>()
+    val childMessage = mutableListOf<ChildMessage>()
 
     open fun addMessage(author: String, text: String) {
 
@@ -19,17 +20,22 @@ open class Chat(
 
     fun addThreadMessage(author: String, text: String, parentMessageId: Int) {
 
-        val threadMessage = ChildMessage(messageId, author, text, parentMessageId)
-        messageList.add(threadMessage)
+        childMessage.add(ChildMessage(messageId, author, text, parentMessageId))
+        childMessage.groupBy { it.parentMessageId }
+
         messageId++
     }
 
     fun printChat() {
         messageList.forEach { message ->
-            print("ID: ${message.messageId}, ")
-            print("Author: ${message.author}, ")
-            print("Text: ${message.text} ")
-            println()
+            println("ID: ${message.messageId}, Author: ${message.author}, Text: ${message.text}")
+            val childMessages = childMessage.filter { it.parentMessageId == message.messageId }
+            if (childMessages.isNotEmpty()) {
+                println("Thread:")
+                childMessages.forEach { child ->
+                    println("  - ${child.text}")
+                }
+            }
         }
     }
 }
@@ -52,11 +58,11 @@ fun main() {
 
     val chat = Chat("Чат")
 
-    val message1 = chat.addMessage("Fedor", "Hi")
-    val message2 = chat.addMessage("Lena", "Hi, f")
-    val thMessage1 = chat.addThreadMessage("Fedor", "my name is Fedor", 0)
-
-
+    val message0 = chat.addMessage("Fedor", "Hi")
+    val message1 = chat.addMessage("Lena", "Hi, F")
+    val message2 = chat.addMessage("Vlad", "text")
+    val thMessage01 = chat.addThreadMessage("Fedor", "my name is Fedor", 0)
+    val thMessage02 = chat.addThreadMessage("Fedor", "in London", 0)
 
     chat.printChat()
 }
