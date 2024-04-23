@@ -6,7 +6,7 @@ class Robot(
     val name: String,
 ) {
 
-    private var isModifier = false
+    var isModifier = false
 
     fun say() {
 
@@ -25,8 +25,8 @@ class Robot(
         else println("$name: ${phrase()}")
     }
 
-    fun setModifier(mod: Boolean) {
-        isModifier = mod
+    fun setModifier(mod: () -> Unit) {
+        mod()
     }
 }
 
@@ -35,6 +35,6 @@ fun main() {
     val robot = Robot("Boris")
 
     robot.say()
-    robot.setModifier(true)
+    robot.setModifier { robot.isModifier = true }
     robot.say()
 }
