@@ -2,23 +2,27 @@ package org.example.lesson_18
 
 open class Fox(
     val name: String = "Лиса",
-    val eat: String = "ягоды",
+    val food: String = "ягоды",
 ) {
 
     fun eating() {
-        println("$name ест $eat")
+        println("$name -> ест $food")
+    }
+
+    fun slipping() {
+        println("$name -> спит")
     }
 }
 
 class Dog(
     name: String = "Собака",
-    eat: String = "кости"
-) : Fox(name, eat)
+    food: String = "кости"
+) : Fox(name, food)
 
 class Cat(
     name: String = "Кошка",
-    eat: String = "рыба"
-): Fox(name, eat)
+    food: String = "рыба"
+) : Fox(name, food)
 
 fun main() {
 
@@ -26,6 +30,6 @@ fun main() {
     val dog = Dog()
     val cat = Cat()
 
-    val animals: List<Fox> = listOf(fox,dog,cat)
+    val animals: List<Fox> = listOf(fox, dog, cat)
     for (animal in animals) animal.eating()
 }
