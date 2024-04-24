@@ -7,13 +7,6 @@ class Contact4(
     var company: String? = null
 ) {
 
-    fun printContact(listOfContact: MutableList<Contact4>) {
-
-        for (contact in listOfContact) {
-            println("Имя: ${contact.name}, Номер: ${contact.number}, Компания: ${contact.company ?: "<не указано>"}")
-        }
-    }
-
     fun createContact(): Contact4? {
 
         print("Введите имя контакта: ")
@@ -36,7 +29,6 @@ class Contact4(
     }
 }
 
-
 fun main() {
 
     val listOfContact = mutableListOf(Contact4("Lena", 12, "ooo"))
@@ -44,7 +36,14 @@ fun main() {
     val contact = Contact4("Fedor", 888)
     listOfContact.add(contact)
     val contact1 = contact.createContact()
-    if (contact1!=null) listOfContact.add(contact1)
+    if (contact1 != null) listOfContact.add(contact1)
 
-    contact.printContact(listOfContact)
+    printContact(listOfContact)
+}
+
+fun printContact(listOfContact: MutableList<Contact4>) {
+
+    for (contact in listOfContact) {
+        println("Имя: ${contact.name}, Номер: ${contact.number}, Компания: ${contact.company ?: "<не указано>"}")
+    }
 }
