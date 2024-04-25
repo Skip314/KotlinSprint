@@ -11,15 +11,11 @@ open class Dice4(
 
 class Dice6(
     override val quantity: Int = 6,
-) : Dice4(quantity) {
-
-}
+) : Dice4(quantity)
 
 class Dice8(
     override val quantity: Int = 8,
-) : Dice4(quantity) {
-
-}
+) : Dice4(quantity)
 
 fun main() {
 
