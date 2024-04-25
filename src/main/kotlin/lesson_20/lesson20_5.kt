@@ -5,11 +5,12 @@ class Robot(
     private var modifier: (String) -> String = { it }
 ) {
 
-    val phrase =
+    private val phrase =
         listOf("Привет", "Меня зовут $name", "Ку-ку", "Тебе повезло", "Ты не такой как все")
 
     fun say() {
-        println(phrase.random())
+        val randomString = phrase.random()
+        println(modifier(randomString))
     }
 
     fun setModifier(modifier: (String) -> String) {
