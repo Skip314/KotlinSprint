@@ -1,32 +1,19 @@
 package org.example.lesson_20
 
-import org.example.lesson_7.getIntRandom
-
 class Robot(
     val name: String,
+    private var modifier: (String) -> String = { it }
 ) {
 
-    var isModifier = false
+    val phrase =
+        listOf("Привет", "Меня зовут $name", "Ку-ку", "Тебе повезло", "Ты не такой как все")
 
     fun say() {
-
-        val phrase: () -> String = {
-
-            when (getIntRandom(1..5).toInt()) {
-
-                1 -> "Привет"
-                2 -> "Меня зовут $name"
-                3 -> "Ку-ку"
-                4 -> "Тебе повезло"
-                else -> "Ты не такой как все"
-            }
-        }
-        if (isModifier) println("$name: ${phrase().reversed()}")
-        else println("$name: ${phrase()}")
+        println(phrase.random())
     }
 
-    fun setModifier(mod: () -> Unit) {
-        mod()
+    fun setModifier(modifier: (String) -> String) {
+        this.modifier = modifier
     }
 }
 
@@ -35,6 +22,8 @@ fun main() {
     val robot = Robot("Boris")
 
     robot.say()
-    robot.setModifier { robot.isModifier = true }
+    robot.setModifier { str: String ->
+        str.reversed()
+    }
     robot.say()
 }
