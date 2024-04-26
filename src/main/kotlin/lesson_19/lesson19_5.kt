@@ -22,6 +22,7 @@ fun main() {
         var inputSex = ""
 
         while (inputSex != "м" && inputSex != "ж") {
+
             print("Выберите пол: м - мужской или ж - женский: ")
             inputSex = readln().lowercase()
             println(inputSex)
@@ -31,7 +32,8 @@ fun main() {
         else sex = Sex.FEMALE
         cardIndex.add(User(name, sex))
     }
-    for (i in cardIndex){
+
+    for (i in cardIndex) {
         println("${i.name} ${i.sex}")
     }
 }
