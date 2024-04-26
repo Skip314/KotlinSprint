@@ -4,22 +4,17 @@ class Panzer(
     val name: String,
     var ammo: Ammunition? = null,
 ) {
+
     fun shoot() {
 
-        val damage = when(ammo) {
-            Ammunition.BLUE -> 5
-            Ammunition.GREEN -> 10
-            Ammunition.RED -> 20
-            null -> 0
-        }
-        println("$name нанес $damage урона")
+        println("$name нанес ${ammo?.damage} урона")
     }
 }
 
-enum class Ammunition{
-    BLUE,
-    GREEN,
-    RED,
+enum class Ammunition(val damage: Int) {
+    BLUE(5),
+    GREEN(10),
+    RED(20),
 }
 
 fun main() {
@@ -29,5 +24,8 @@ fun main() {
     tank.shoot()
 
     tank.ammo = Ammunition.RED
+    tank.shoot()
+
+    tank.ammo = Ammunition.BLUE
     tank.shoot()
 }
