@@ -9,7 +9,7 @@ class Player(
 fun main() {
 
     val player = Player("admin", 100)
-    player.isHealThy()
+    println(player.isHealThy())
 }
 
 fun Player.isHealThy(): Boolean {
