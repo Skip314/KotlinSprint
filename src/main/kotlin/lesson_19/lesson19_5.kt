@@ -6,9 +6,9 @@ class User(
 )
 
 
-enum class Sex {
-    MALE,
-    FEMALE,
+enum class Sex(val nameSex: String) {
+    MALE("муж"),
+    FEMALE("жен"),
 }
 
 fun main() {
@@ -16,25 +16,33 @@ fun main() {
     println("Введите имя и пол в формате м или ж")
     val cardIndex = mutableListOf<User>()
 
+    for (i in 1..QUANTITY_USER) {
+        cardIndex.add(User(readName(), readSex()))
+    }
+
+    for (i in cardIndex) println("${i.name} - ${i.sex.nameSex}")
 
 }
+
 fun readName(): String {
     print("Введите имя: ")
     return readln()
 }
 
 fun readSex(): Sex {
-    print("Выберите пол: м - мужской или ж - женский: ")
-    var setSex = readln().lowercase()
+
     var sex: Sex? = null
-    when (setSex) {
-        "м" -> sex = Sex.MALE
-        "ж" -> sex = Sex.FEMALE
-        else -> {
-            print("Выберите пол: м - мужской или ж - женский: ")
-            setSex = readln()
+    while (sex == null) {
+        print("Выберите пол: м - мужской или ж - женский: ")
+        var setSex = readln().lowercase()
+        when (setSex) {
+            "м" -> sex = Sex.MALE
+            "ж" -> sex = Sex.FEMALE
+            else -> sex = null
         }
     }
     return sex!!
 }
+
+const val QUANTITY_USER = 5
 
