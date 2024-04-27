@@ -2,13 +2,8 @@ package org.example.lesson_21
 
 fun main() {
 
-    val text = "hello"
+    val text = "helloyi"
     println(text.vowelCount())
 }
 
-fun String.vowelCount() {
-
-    val charList = listOf('a', 'e', 'i', 'j', 'o', 'u', 'y')
-    var count = 0
-    for (char in this) if (char in charList) count++
-}
+fun String.vowelCount() = this.filter { it in listOf('a', 'e', 'i', 'o', 'u', 'y') }.count()
