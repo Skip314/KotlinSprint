@@ -12,8 +12,4 @@ fun main() {
     println(player.isHealThy())
 }
 
-fun Player.isHealThy(): Boolean {
-    if (this.health == maxHealth)
-        return true
-    else return false
-}
+fun Player.isHealThy(): Boolean = health == maxHealth
