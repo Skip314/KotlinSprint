@@ -9,5 +9,5 @@ fun main() {
 fun Map<String, Int>.maxCategory(): String? {
 
     val maxSkill = maxOf() { it.value }
-    return this.maxByOrNull { it.value == maxSkill }?.key
+    return this.maxByOrNull { it.value }?.key
 }
