@@ -3,6 +3,18 @@ package org.example.lesson_22
 class ViewModel(
     var stat: MainScreenStat,
 ) {
+    data class MainScreenStat(
+        var data: String,
+        private var isLoading: Boolean = false,
+    ) {
+
+        fun changeIsLoad() {
+
+            this.copy()
+            isLoading = true
+        }
+    }
+
     fun loadData(stat: Int): String {
         return when (stat) {
             1 -> "загрузка данных"
@@ -12,25 +24,14 @@ class ViewModel(
     }
 }
 
-data class MainScreenStat(
-    var data: String,
-    private var isLoading: Boolean = false,
-) {
-
-    fun changeIsLoad() {
-
-        this.copy()
-        isLoading = true
-    }
-}
 
 fun main() {
 
-    val stat = MainScreenStat("data")
-    val screen = ViewModel(stat)
-
+    val screen = ViewModel(ViewModel.MainScreenStat("data"))
+    screen.
     println(screen.loadData(0))
 
-    stat.changeIsLoad()
+
+
     println(screen.loadData(1))
 }
