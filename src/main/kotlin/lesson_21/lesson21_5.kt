@@ -6,8 +6,4 @@ fun main() {
     println(skill.maxCategory())
 }
 
-fun Map<String, Int>.maxCategory(): String? {
-
-    val maxSkill = maxOf() { it.value }
-    return this.maxByOrNull { it.value }?.key
-}
+fun Map<String, Int>.maxCategory(): String? = this.maxByOrNull { it.value }?.key
