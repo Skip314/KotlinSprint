@@ -9,7 +9,10 @@ class ViewModel(
     )
 
     fun loadData() {
-        state = state.copy(isLoading = true)
+        val newState = state.copy(isLoading = true)
+        newState.isLoading = false
+        newState.data = "отсутствие данных"
+        state = newState
     }
 }
 
@@ -17,5 +20,6 @@ class ViewModel(
 fun main() {
 
     val screen = ViewModel(ViewModel.MainScreenStat("Data"))
-    var state = state.copy(data = loadData(), isLoading = false)
+    screen.loadData()
+    println(screen.state)
 }
