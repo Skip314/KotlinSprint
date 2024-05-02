@@ -17,6 +17,5 @@ class ViewModel(
 fun main() {
 
     val screen = ViewModel(ViewModel.MainScreenStat("Data"))
-    println(screen.loadData())
-    var state = state.copy(data = loadedData, isLoading = false)
+    var state = state.copy(data = loadData(), isLoading = false)
 }
